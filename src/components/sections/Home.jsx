@@ -55,7 +55,10 @@ export default function Home() {
       <section className="banner-section">
         <div className="banner-slider slick-initialized slick-slider">
           {user && (
-            <div className="news-container" style={{ marginTop: "103px" }}>
+            <div
+              className="news-container"
+              style={{ marginTop: "103px", zIndex: "1" }}
+            >
               <div className="title">Latest News</div>
               <div style={{ backgroundColor: "#f09a6b" }}>
                 <ul>

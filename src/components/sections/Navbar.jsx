@@ -95,11 +95,11 @@ export default function Navbar() {
                       <a href="#services">Services</a>
                       <ul
                         style={{
-                          position: "absolute",
+                          // position: "absolute",
                           top: "100%",
                           left: 0,
                           display: "none",
-                          zIndex: 1000,
+                          zIndex: 999,
                         }}
                       >
                         <li>
