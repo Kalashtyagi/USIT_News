@@ -5,7 +5,7 @@
   right: 0;
   font-family: "Roboto", sans-serif;
   box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
-  z-index: 100;
+  z-index: 999;
 }
 
 .news-container .title {
@@ -4541,6 +4541,7 @@ main {
   position: relative;
   height: 100vh;
   width: 100%;
+  margin-top: 100px;
 }
 .banner-section .slick-prev,
 .banner-section .slick-next {

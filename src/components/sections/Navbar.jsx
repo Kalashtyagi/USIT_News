@@ -93,7 +93,15 @@ export default function Navbar() {
                     <li className="dropdown">
                       {" "}
                       <a href="#services">Services</a>
-                      <ul>
+                      <ul
+                        style={{
+                          position: "absolute",
+                          top: "100%",
+                          left: 0,
+                          display: "none",
+                          zIndex: 1000,
+                        }}
+                      >
                         <li>
                           <a href="/s1">Data Engineering</a>
                         </li>

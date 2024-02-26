@@ -27,6 +27,7 @@ import S3 from "./components/pages/ServicePage/S3";
 import AddNews from "./components/pages/AddNews/addnew";
 import SignUp from "./components/pages/SingUp/SingUp";
 import Reset from "./components/pages/Reset-Password/Reset";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   const isLogin = window.location.pathname === "/LOGIN";
@@ -60,14 +61,14 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="developerProfile" element={<DeveloperProfile />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signUp"element={<SignUp/>}/>
-        <Route path="/resetPassword"element={<Reset/>}/>
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/resetPassword" element={<Reset />} />
 
         <Route path="/devInfo/:id" element={<DevInfo />} />
         <Route path="s1" element={<S1 />} />
         <Route path="s2" element={<S2 />} />
         <Route path="s3" element={<S3 />} />
-        <Route path="/addNews" element={<AddNews/>}/>
+        <Route path="/addNews" element={<AddNews />} />
       </Routes>
       {!isLogin && <Footer />}
     </>

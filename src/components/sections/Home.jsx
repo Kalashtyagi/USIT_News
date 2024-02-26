@@ -52,30 +52,22 @@ export default function Home() {
 
   return (
     <>
-      {user && (
-        <div className="news-container" style={{ marginTop: "103px" }}>
-          <div className="title">Latest News</div>
-          <div style={{ backgroundColor: "#f09a6b" }}>
-            <ul>
-              {data.map((item, index) => (
-                <li style={{ color: "white" }} key={index}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
       <section className="banner-section">
         <div className="banner-slider slick-initialized slick-slider">
-          {/* <button
-            className="slick-prev slick-arrow"
-            aria-label="Previous"
-            type="button"
-            style={{}}
-          >
-            Previous
-          </button> */}
+          {user && (
+            <div className="news-container" style={{ marginTop: "103px" }}>
+              <div className="title">Latest News</div>
+              <div style={{ backgroundColor: "#f09a6b" }}>
+                <ul>
+                  {data.map((item, index) => (
+                    <li style={{ color: "white" }} key={index}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
           <div className="slick-list draggable">
             <div
               className="slick-track"
@@ -85,88 +77,6 @@ export default function Home() {
                 // transform: translate3d("-3166px", "0px", "0px"),
               }}
             >
-              {/* <div
-                className="banner-slide slick-slide slick-cloned"
-                data-slick-index="-1"
-                id=""
-                aria-hidden="true"
-                // tabindex="-1"
-                style={{ width: "1583px" }}
-              >
-                {" "}
-                <img src={bg} alt="" />
-                <div className="outer-box">
-                  <div className="auto-container">
-                    <div className="content-box">
-                      {" "}
-                      <span className="sub-title">
-                        Next level Automation System
-                      </span>
-                      <h1
-                        data-animation-in="fadeInLeft"
-                        data-delay-in="0.2"
-                        style="opacity: 0;"
-                      >
-                        Cast Effective Digital Marketing Agency
-                      </h1>
-                      <div className="btn-box">
-                        {" "}
-                        <a
-                          href=""
-                          data-animation-in="fadeInUp"
-                          data-delay-in="0.4"
-                          className="theme-btn"
-                          //   tabindex="-1"
-                          style={{ opacity: 0 }}
-                        >
-                          Discover More
-                        </a>{" "}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-              {/* <div
-                className="banner-slide slick-slide"
-                data-slick-index="0"
-                aria-hidden="true"
-                // tabindex="-1"
-                style={{ width: "1583px" }}
-              >
-                {" "}
-                <img src="./computer.gif" alt="" />
-                <div className="outer-box">
-                  <div className="auto-container">
-                    <div className="content-box">
-                      {" "}
-                      <span className="sub-title">
-                        Next level Automation System
-                      </span>
-                      <h1
-                        data-animation-in="fadeInLeft"
-                        data-delay-in="0.2"
-                        className=""
-                        style="opacity: 0; animation-delay: 0.2s;"
-                      >
-                        Cast Effective Digital Marketing Agency
-                      </h1>
-                      <div className="btn-box">
-                        {" "}
-                        <a
-                          href=""
-                          data-animation-in="fadeInUp"
-                          data-delay-in="0.4"
-                          className="theme-btn"
-                          tabindex="-1"
-                          style={{ opacity: 0, animationDelay: "0.4s" }}
-                        >
-                          Discover More
-                        </a>{" "}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
               <div
                 className="banner-slide slick-slide slick-current slick-active"
                 data-slick-index="1"

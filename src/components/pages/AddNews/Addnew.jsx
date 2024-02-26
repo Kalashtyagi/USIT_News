@@ -78,26 +78,30 @@ const AddNews = () => {
     }
   };
 
-  const fetchNews = async () => {
-    try {
-      const response = await fetch(
-        "http://usit-dev.eba-5unspzqn.us-east-1.elasticbeanstalk.com/api/Dashboard"
-      );
-      const jsonData = await response.json();
-      console.log("dataaaa", jsonData);
-      setData(
-        jsonData
-          .filter((item) => item.addedBy === userName)
-          .map((item) => ({ text: item.text, id: item.id }))
-      );
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch(
+          "http://usit-dev.eba-5unspzqn.us-east-1.elasticbeanstalk.com/api/Dashboard"
+        );
+        const jsonData = await response.json();
+        console.log("dataaaa", jsonData);
+        setData(
+          jsonData
+            .filter((item) => item.addedBy === userName)
+            .map((item) => ({ text: item.text, id: item.id }))
+        );
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchNews();
+  }, [userName]);
+
   console.log("newss", data);
 
   const handleShow = () => {
-    fetchNews();
+    setSelectedItems([]);
     setShow(!show);
   };
 
@@ -114,7 +118,10 @@ const AddNews = () => {
         })
       );
       toast.success("News deleted successfully");
-      fetchNews(); // Fetch updated news after deletion
+      // Fetch updated news after deletion
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
       setSelectedItems([]);
       setShow(false);
     } catch (error) {
@@ -165,54 +172,67 @@ const AddNews = () => {
         Add News
       </Button>
       &nbsp;
-      <Button variant="contained" color="error" onClick={handleShow}>
-        Delete News
-      </Button>
+      {data.length > 0 && (
+        <Button variant="contained" color="error" onClick={handleShow}>
+          Delete News
+        </Button>
+      )}
       <br />
       <br />
-      {show && (
-        <Grid item md={2} sx={2}>
-          <FormControl style={{ width: "260px" }}>
-            <InputLabel id="state-province-label">
-              Select News to Delete
-            </InputLabel>
-            <Select
-              required
-              label="Select News to Delete"
-              multiple // Enable multiple selection
-              value={selectedItems}
-              onChange={(event) => setSelectedItems(event.target.value)}
-              renderValue={(selected) => selected.join(", ")}
-              comma-separated
-              string
+      <div style={{ display: "flex" }}>
+        {show && (
+          <Grid item md={2} sx={2}>
+            <FormControl style={{ width: "260px" }}>
+              <InputLabel id="state-province-label">
+                Select News to Delete
+              </InputLabel>
+              <Select
+                required
+                label="Select News to Delete"
+                multiple // Enable multiple selection
+                value={selectedItems}
+                onChange={(event) => setSelectedItems(event.target.value)}
+                renderValue={(selected) => selected.join(", ")}
+                comma-separated
+                string
+              >
+                {data &&
+                  data.map((item) => (
+                    <MenuItem
+                      key={item.id}
+                      value={item.text}
+                      onClick={() => storeId(item.id)}
+                    >
+                      <Checkbox />
+                      <ListItemText primary={item.text} />
+                    </MenuItem>
+                  ))}
+              </Select>
+            </FormControl>
+          </Grid>
+        )}
+        {selectedItems.length > 0 && show && (
+          <div style={{ marginLeft: "40px" }}>
+            <Button
+              variant="contained"
+              color="error"
+              onClick={handleDeleteNews}
+              style={{ cursor: "pointer" }}
             >
-              {data &&
-                data.map((item) => (
-                  <MenuItem
-                    key={item.id}
-                    value={item.text}
-                    onClick={() => storeId(item.id)}
-                  >
-                    <Checkbox />
-                    <ListItemText primary={item.text} />
-                  </MenuItem>
-                ))}
-            </Select>
-          </FormControl>
-        </Grid>
-      )}
-      <br />
-      {selectedItems.length > 0 && (
-        <div>
-          <Button variant="contained" color="error" onClick={handleDeleteNews}>
-            Delete
-          </Button>
-          &nbsp;
-          <Button variant="contained" color="success" onClick={handleShow}>
-            Cancel
-          </Button>
-        </div>
-      )}
+              Delete
+            </Button>
+            &nbsp;
+            <Button
+              variant="contained"
+              color="success"
+              style={{ cursor: "pointer" }}
+              onClick={handleShow}
+            >
+              Cancel
+            </Button>
+          </div>
+        )}
+      </div>
       <ToastContainer position="top-center" />
     </div>
   );

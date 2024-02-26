@@ -55,7 +55,7 @@ const ContactPage = () => {
           <div className="col-lg-4">
             <div className="info">
               <div className="address">
-                <i className="bi bi-geo-alt"></i>
+                <i class="bi bi-geo-alt-fill"></i>
                 <h4>Location:</h4>
                 <p>USA</p>
               </div>

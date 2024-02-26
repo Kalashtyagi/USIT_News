@@ -112,7 +112,7 @@ export default function Footer() {
                   <h3 className="widget-title">Quick Links</h3>
                   <ul className="user-links">
                     <li>
-                      <a href="/about">About Company</a>
+                      <a href="#about">About Company</a>
                     </li>
                     <li>
                       <a href="">Meet the Team</a>
@@ -140,14 +140,14 @@ export default function Footer() {
                   <h3 className="widget-title">Contact Now</h3>
                   <div className="widget-content">
                     <div className="text">
-                      <i className="fa-solid fa-location-dot"></i>USA 
+                      <i className="fa-solid fa-location-dot"></i>USA
                     </div>
                     <ul className="contact-info">
                       <li>
                         <i className="fa fa-envelope"></i>{" "}
                         <a href="mailto:needhelp@yourdomain.com">
-                        contact@usitsource.com
-                                                </a>
+                          contact@usitsource.com
+                        </a>
                         <br />
                       </li>
                       <li>

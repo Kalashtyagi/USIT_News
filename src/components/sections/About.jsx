@@ -12,7 +12,7 @@ export default function About() {
   return (
     <>
       {/* <!-- about-section --> */}
-      <section className="about-section">
+      <section className="about-section" id="about">
         <div className="auto-container">
           <div className="row">
             {/* <!-- content-column --> */}
