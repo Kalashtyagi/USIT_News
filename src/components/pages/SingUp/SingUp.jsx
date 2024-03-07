@@ -167,7 +167,7 @@ export default function SignUp() {
                 xs
                 style={{ display: "flex", justifyContent: "space-between" }}
               >
-                Already have an account
+                Already have an account?
                 <Link href="/logIn" variant="body2">
                   LogIn
                 </Link>

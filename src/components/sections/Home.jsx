@@ -29,7 +29,7 @@ export default function Home() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://usit-dev.eba-5unspzqn.us-east-1.elasticbeanstalk.com/api/Dashboard"
+          "https://usit-dev.eba-5unspzqn.us-east-1.elasticbeanstalk.com/api/Dashboard"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

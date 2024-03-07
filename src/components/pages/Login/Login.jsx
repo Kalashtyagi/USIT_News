@@ -145,9 +145,9 @@ export default function Login() {
                 xs
                 style={{ display: "flex", justifyContent: "space-between" }}
               >
-                Don't hava an account
+                Don't have an account?
                 <Link href="/signUp" variant="body2">
-                  Signup?
+                  Sign up
                 </Link>
               </Grid>
             </Grid>
