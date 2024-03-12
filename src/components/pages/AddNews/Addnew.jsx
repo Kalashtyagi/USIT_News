@@ -57,7 +57,7 @@ const AddNews = () => {
       };
 
       const response = await fetch(
-        "https://usit-dev.eba-5unspzqn.us-east-1.elasticbeanstalk.com/api/Dashboard",
+        "http://usit-backend-dev.eba-xc6xkkgt.us-east-1.elasticbeanstalk.com/api/Dashboard",
         {
           method: "POST",
           headers: {
@@ -82,7 +82,7 @@ const AddNews = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          "https://usit-dev.eba-5unspzqn.us-east-1.elasticbeanstalk.com/api/Dashboard"
+          "http://usit-backend-dev.eba-xc6xkkgt.us-east-1.elasticbeanstalk.com/api/Dashboard"
         );
         const jsonData = await response.json();
         console.log("dataaaa", jsonData);
@@ -110,7 +110,7 @@ const AddNews = () => {
       await Promise.all(
         id.map(async (itemId) => {
           await fetch(
-            `https://usit-dev.eba-5unspzqn.us-east-1.elasticbeanstalk.com/api/Dashboard/${itemId}`,
+            `http://usit-backend-dev.eba-xc6xkkgt.us-east-1.elasticbeanstalk.com/api/Dashboard/${itemId}`,
             {
               method: "DELETE",
             }
